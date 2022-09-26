@@ -50,3 +50,22 @@ const arr3: [number, number, string] = [12, 34, "hello"]; // 튜플: 길이가 �
 
 // 객체
 const obj: { lat: number; lon: number } = { lat: 37.5, lon: 127.5 };
+
+/**
+ * @desc: 타입 추론
+ * ts가 추론하지 못하는 경우에만 타입기재, any 안나오게 사용
+ */
+
+const typeA = "5";
+const typeB = 5;
+const typeC = typeA + typeB;
+function typeAdd(x: number, y: number) {
+  return x + y;
+}
+
+const typeArr = ["123", "45"];
+const typeArr2 = [123, 456];
+const typeObj = {
+  lat: 37.5,
+  lon: 127.5,
+};
