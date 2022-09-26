@@ -69,3 +69,34 @@ const typeObj = {
   lat: 37.5,
   lon: 127.5,
 };
+
+/**
+ * @desc: JS에서 사라지는 부분
+ * 타입은 사라짐
+ */
+
+/*
+
+const obj: { lat: number, lon: number } = { lat: 37.5, lon: 127.5 };
+const obj = { lat: 37.5, lon: 127.5 };
+
+const a = document.querySelector('#root') as HTMLDivElement;
+const a = document.querySelector('#root');
+
+function add<T>(x: T, y: T): T { return x + y }
+function add(x, y) { return x + y }
+
+interface A {};
+type A = {};
+
+*/
+
+// 함수에서 똑같은 것 2개 있을 경우 -> 타입을 선언해놓은 것
+function add4(x: number, y: number): number;
+function add4(x, y) {
+  return x + y;
+}
+
+// never, unknown, any 타입 주의하기
+let aa = 123;
+aa = "hello" as unknown as number;
