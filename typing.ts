@@ -100,3 +100,18 @@ function add4(x, y) {
 // never, unknown, any 타입 주의하기
 let aa = 123;
 aa = "hello" as unknown as number;
+
+// never
+try {
+  const arr4: string[] = [];
+  arr4.push("hello");
+} catch (error) {
+  error;
+}
+
+// ! 느낌표타입
+// const head = document.querySelector("#head") // | = 또는
+// if (head) {
+//   head.innerHTML = "hello"
+// }
+const head = document.querySelector("#head")!;
