@@ -92,10 +92,10 @@ type A = {};
 */
 
 // 함수에서 똑같은 것 2개 있을 경우 -> 타입을 선언해놓은 것
-function add4(x: number, y: number): number;
-function add4(x, y) {
-  return x + y;
-}
+//function add4(x: number, y: number): number;
+// function add4(x, y) {
+//   return x + y;
+// }
 
 // never, unknown, any 타입 주의하기
 let aa = 123;
@@ -115,3 +115,43 @@ try {
 //   head.innerHTML = "hello"
 // }
 const head = document.querySelector("#head")!;
+
+/**
+ * @desc: 템플릿 리터널 타입
+ */
+type World = "world" | "hell";
+type Greeting = `Hello ${World}`;
+
+/**
+ * @desc: rest
+ */
+function rest(...args: string[]) {
+  console.log(args);
+}
+rest("1", "2", "3");
+
+/**
+ * @desc: enum
+ */
+const enum Edirection {
+  UP, // 기본값 = 0, 값을 따로 줘도 된다
+  DOWN,
+}
+
+const Odirection = {
+  Up: 0,
+  Down: 1,
+  Left: 2,
+  Right: 3,
+} as const;
+
+// keyof, typeof
+// 객체의 key와 value 가져오는 것
+const obj1 = {
+  a: "1",
+  b: "hello",
+  c: "world",
+} as const;
+
+type Key = keyof typeof obj1; // key값
+type Key2 = typeof obj1[keyof typeof obj1]; // value값
