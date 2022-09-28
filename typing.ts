@@ -155,3 +155,6 @@ const obj1 = {
 
 type Key = keyof typeof obj1; // key값
 type Key2 = typeof obj1[keyof typeof obj1]; // value값
+
+type test = keyof typeof obj1;
+type test1 = typeof obj1[keyof typeof obj1];
