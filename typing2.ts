@@ -15,3 +15,28 @@ type union = string | number;
 
 // intersection(&)
 type intersection = { hello: "world" } & { woong: "woong" };
+
+// 응용 -> 상속의 개념
+type Animal = { breath: true };
+type Mammal = Animal & { breed: true };
+type Human = Mammal & { think: true };
+
+const woong: Human = { breath: true, breed: true, think: true };
+
+interface InA {
+  breath: true;
+}
+interface InB extends InA {
+  breed: true;
+}
+const exB: InB = { breath: true, breed: true };
+
+/**
+ * @desc: 타입은 집합으로 생각
+ */
+
+type Ta = { name: string };
+type Tb = { age: number };
+
+type C = Ta & Tb;
+const c: C = { name: "woong", age: 20 };
