@@ -59,3 +59,30 @@ function fnA(callback: () => void): void {}
 fnA(() => {
   return "3";
 });
+
+/**
+ * @desc: 타입 가드
+ */
+function numOrStr(a: number | string) {
+  if (typeof a === "string") {
+    a.split(",");
+  } else {
+    a.toFixed(1);
+  }
+}
+
+numOrStr("123");
+console.log(numOrStr("123"));
+
+// 타입가드 배열
+function numOrStrArray(a: number | number[]) {
+  if (Array.isArray(a)) {
+    // number[]
+    a.concat(4);
+  } else {
+    // number
+    a.toFixed(2);
+  }
+}
+
+numOrStrArray([1, 2, 3]);
