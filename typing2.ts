@@ -40,3 +40,22 @@ type Tb = { age: number };
 
 type C = Ta & Tb;
 const c: C = { name: "woong", age: 20 };
+
+/**
+ * @desc: void
+ */
+
+interface InC {
+  talk: () => void;
+}
+
+const cnA: InC = {
+  talk() {
+    return "abc";
+  },
+};
+
+function fnA(callback: () => void): void {}
+fnA(() => {
+  return "3";
+});
