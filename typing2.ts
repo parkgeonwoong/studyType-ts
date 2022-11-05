@@ -63,6 +63,7 @@ fnA(() => {
 /**
  * @desc: 타입 가드
  */
+// 타입가드 문자열
 function numOrStr(a: number | string) {
   if (typeof a === "string") {
     a.split(",");
@@ -86,3 +87,24 @@ function numOrStrArray(a: number | number[]) {
 }
 
 numOrStrArray([1, 2, 3]);
+
+// 타입 가드 클래스
+class Ca {
+  aaa() {}
+}
+
+class Cb {
+  bbb() {}
+}
+
+function aOrB(param: Ca | Cb) {
+  if (param instanceof Ca) {
+    param.aaa();
+  }
+}
+
+aOrB(new Ca());
+
+// 객체를 만들때 태그 또는 라벨을 달아놓는 습관
+const human1 = { type: "human1" };
+const dog = { type: "dog" };
