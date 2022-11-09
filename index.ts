@@ -303,3 +303,20 @@ const Atype4: Atype3 = {
 };
 
 console.log(Atype4);
+
+/**
+ * 리터럴 타입 = 지정하는 타입
+ */
+
+function Qfunction(x: "가위" | "바위" | "보"): ("가위" | "바위" | "보")[] {
+  let arr: ("가위" | "바위" | "보")[] = [];
+
+  return arr;
+}
+
+var 자료 = {
+  name: "kim",
+} as const;
+
+function 내함수(a: "kim") {}
+내함수(자료.name);
