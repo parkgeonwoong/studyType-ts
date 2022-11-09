@@ -133,3 +133,42 @@ function app4(arr) {
     return newArr;
 }
 console.log(app4(["1", 2, "3"]));
+// Q.
+let 철수쌤 = { subject: "math" };
+let 영희쌤 = { subject: ["science", "english"] };
+let 민수쌤 = { subject: ["science", "art", "korean"] };
+const sub = (obj) => {
+    if (typeof obj.subject === "string") {
+        return obj.subject;
+    }
+    if (Array.isArray(obj.subject)) {
+        console.log(obj.subject);
+        return obj.subject[obj.subject.length - 1];
+    }
+};
+console.log("result: ", sub(민수쌤));
+console.clear();
+const study = {
+    name: "node",
+};
+// Q.1
+// object 타입을 정의한 type alias 두개를 & 기호로 합칠 때 중복된 속성이 있으면 어떻게 될까요?
+// 교집합 -> 인터섹션
+const Hello = {
+    name: "1",
+    x: 12,
+    y: 2,
+};
+console.log(Hello);
+const Atype2 = {
+    name: "kim",
+    phone: 123,
+    email: "abc@naver.com",
+};
+const Atype4 = {
+    name: "kim",
+    phone: 123,
+    email: "abc@naver.com",
+    adult: true,
+};
+console.log(Atype4);
