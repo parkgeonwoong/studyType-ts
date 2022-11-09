@@ -184,3 +184,34 @@ var 자료 = {
 };
 function 내함수(a) { }
 내함수(자료.name);
+const TestType = () => {
+    return 1;
+};
+let userInfo = {
+    name: "park",
+    Plus(a) {
+        return a + 1;
+    },
+    changeName: () => {
+        return "Change!";
+    },
+};
+console.clear();
+const cutZero = (param) => {
+    return param.replace("0", "");
+};
+const removeDash = (param) => {
+    let str = "";
+    for (let item of param) {
+        if (item !== "-") {
+            str += item;
+        }
+    }
+    return parseInt(str);
+};
+console.log(removeDash("123-52131-123"));
+const makeFun = (param, callback1, callback2) => {
+    let resultCall = callback1(param);
+    return callback2(resultCall);
+};
+console.log("Q3: ", makeFun("010-1111-2222", cutZero, removeDash));
