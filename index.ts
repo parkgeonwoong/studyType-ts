@@ -41,3 +41,20 @@ naver.forEach((item) => {
     item.href = "https://kakao.com";
   }
 });
+
+// class - js
+// function Class1 (first, second) {
+//     this.a = first
+//     this.b = second
+// }
+
+// new Class1('a', 'b')
+
+// class Class2 {
+//     constructor(first, second) {
+//         this.a = first
+//         this.b = second
+//     }
+// }
+
+// new Class2('a', 'b')
