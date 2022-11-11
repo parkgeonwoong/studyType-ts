@@ -95,3 +95,30 @@ function arr1Func([a, b, c]: Arr1) {
 }
 
 arr1Func(arr1);
+
+console.clear();
+
+/**
+ * in 키워드
+ */
+
+type Fish = { swim: string };
+type Bird = { fly: string };
+
+function ani(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    animal.swim;
+  }
+}
+
+type Car = {
+  wheel: "4w";
+  color: string;
+};
+
+type Bike = {
+  wheel: "2w";
+  color: string;
+};
+
+function testFunc(x: Car | Bike) {}
