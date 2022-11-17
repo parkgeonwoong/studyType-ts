@@ -1,3 +1,6 @@
+/**
+ * HTML과 연동
+ */
 let Title = document.querySelector("#title");
 
 // narrowing 하는 방법
@@ -66,11 +69,6 @@ naver.forEach((item) => {
 const drawDiv = document.querySelector(".draw");
 const drawBtn = document.querySelector(".drawBtn");
 
-let rect;
-if (drawDiv instanceof Element) {
-  rect = drawDiv?.getBoundingClientRect();
-}
-
 class Square {
   width: number;
   height: number;
@@ -85,12 +83,12 @@ class Square {
   draw() {
     const newDiv = document.createElement("div");
 
-    const x = Math.random() * rect.width;
-    const y = Math.random() * rect.height;
+    let random = Math.random();
 
-    newDiv.style.left = `${x}px`;
-    newDiv.style.top = `${y}px`;
+    newDiv.style.top = `${random * 400}px`;
+    newDiv.style.left = `${random * 400}px`;
 
+    newDiv.style.position = "relative";
     newDiv.style.width = `${this.width}px`;
     newDiv.style.height = `${this.height}px`;
     newDiv.style.backgroundColor = `${this.color}`;
